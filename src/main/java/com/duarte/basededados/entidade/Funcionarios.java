@@ -8,22 +8,21 @@ import javax.persistence.Id;
 
 @Entity
 public class Funcionarios {
-	
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO) 
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@Column(name="Nome" , nullable=false)
+
+	@Column(name = "Nome", nullable = true)
 	private String nome;
-	
-	@Column(name="Data de Nascimeto", nullable=false)
+
+	@Column(name = "DataDeNascimento", nullable = true)
 	private String dataDeNascimento;
-	
-	@Column(name="NIF", nullable=false)
+
+	@Column(name = "NIF", nullable = true)
 	private String nif;
-	
-	@Column(name="Telefone", nullable=false)
+
+	@Column(name = "Telefone", nullable = true)
 	private String telefone;
 
 	public Long getId() {
@@ -65,8 +64,5 @@ public class Funcionarios {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
-	
-	
 
 }

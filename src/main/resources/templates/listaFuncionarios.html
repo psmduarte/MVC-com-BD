@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Lista de Funcionarios</title>
+</head>
+
+<body>
+
+	<h2>Lista de Funcionarios por Nomes</h2>
+	<div th:unless="${#lists.isEmpty(funcionarios)}">
+		<dl th:each="funcionarios : ${funcionarios}">
+			<dt class="bookHeadline">
+				<span th:text="${funcionarios.nome}">Nome: </span>
+				<span th:text="${funcionarios.nif}">Nif: </span>
+				<span th:text="${funcionarios.dataDeNascimento}">Data de Nascimento: </span>
+				<span th:text="${funcionarios.telefone}">Telefone: </span>
+			</dt>
+		</dl>
+	</div>
+
+	<div th:if="${#lists.isEmpty(funcionarios)}">
+		<p>Nenhum funcionario com esse nome!</p>
+	</div>
+	<hr />
+	<h3>Adicione um novo funcionario:</h3>
+	<form method="POST">
+		<label for="nome">Nome: <input type="text" name="nome" size="50" ></input><br/>
+		<label for="nif">Nif: <input type="text" name="nif" size="15"></input><br/>
+		<label for="dataDeNascimento">Data de Nascimento: <input type="text" name="dataDeNascimento" size="15"></input><br/>
+		<label for="telefone">Telefone: <input type="text" name="telefone" size="15"></input></label><br/>
+		
+	
+		<br/><input type="submit"></input>
+	</form>
+
+
+
+</body>
+</html>

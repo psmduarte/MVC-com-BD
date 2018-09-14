@@ -32,9 +32,9 @@ public class FuncionariosController {
 		return "listaFuncionarios";
 	}
 	@RequestMapping(value = "/{nome}", method = RequestMethod.POST)
-	public String adicionaFuncionario(@PathVariable("nome") String nome, Funcionarios funcionario) {
-		funcionario.setNome(nome);
-		funcionariosRepository.save(funcionario);
+	public String adicionaFuncionario(@PathVariable("nome") String nome, Funcionarios funcionarios) {
+		funcionarios.setNome(nome);
+		funcionariosRepository.save(funcionarios);
 		return "redirect:/{nome}";
 	}
 	
@@ -44,5 +44,4 @@ public class FuncionariosController {
 	
 	
 	
-
 }
